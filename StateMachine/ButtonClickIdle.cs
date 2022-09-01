@@ -10,7 +10,7 @@ namespace The_Do_Nothing_Project.StateMachine
     {
         public override string OnClick()
         {
-            throw new NotImplementedException();
+            return "Now I'm idle. But let me tell you a story about the time that I pushed a button when I shouldn't have.";
         }
     }
 }

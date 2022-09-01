@@ -10,7 +10,7 @@ namespace The_Do_Nothing_Project.StateMachine
     {
         public override string OnClick()
         {
-            throw new NotImplementedException();
+            return "Yea ok, but it still does nothing";
         }
     }
 }

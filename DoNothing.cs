@@ -18,6 +18,7 @@ namespace The_Do_Nothing_Project
         {
             InitializeComponent();
             button1.Text = "Don't push. It does nothing";
+            button2.Text = "Push this instead";
         }
         private void DoNothing_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,18 @@ namespace The_Do_Nothing_Project
         private void button1_Click(object sender, EventArgs e)
         {
             client.SetWrong();
+            textBox1.Text = client.OnHit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            client.SetRight();
+            textBox1.Text = client.OnHit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            client.SetIdle();
             textBox1.Text = client.OnHit();
         }
     }

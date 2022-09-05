@@ -1,20 +1,18 @@
-﻿namespace The_Do_Nothing_Project.StateMachine
+﻿using The_Do_Nothing_Project.Interfaces;
+
+namespace The_Do_Nothing_Project.Control
 {
     internal class Client
     {
-        State currentState, idle, right, wrong;
+        IState currentState, idle, right, wrong;
         public Client()
         {
-            //caching for memory management. Added after statemachine converted into strategy pattern
-            idle = new ButtonClickIdle();
-            right = new ButtonClickRight();
-            wrong = new ButtonClickWrong();
             if (currentState == null)
             {
                 SetState(idle);
             }
         }
-        public void SetState(State state)
+        public void SetState(IState state)
         {
             this.currentState = state;
             //this.currentState.SetClient(this); statemachine artifact

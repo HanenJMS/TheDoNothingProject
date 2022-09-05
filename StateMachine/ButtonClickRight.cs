@@ -2,7 +2,7 @@
 {
     internal class ButtonClickRight : State
     {
-        public string OnClick()
+        public override string OnClick()
         {
             return "Yea ok, but it still does nothing";
         }

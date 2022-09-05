@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using The_Do_Nothing_Project.StateMachine;
+using The_Do_Nothing_Project.Control;
 
 namespace The_Do_Nothing_Project
 {

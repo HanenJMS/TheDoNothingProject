@@ -32,6 +32,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.Create = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -48,6 +49,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.AccessibleName = "Create";
             this.textBox1.Location = new System.Drawing.Point(153, 82);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -78,6 +80,17 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // Create
+            // 
+            this.Create.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Create.Location = new System.Drawing.Point(619, 388);
+            this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(140, 66);
+            this.Create.TabIndex = 4;
+            this.Create.Text = "Create";
+            this.Create.UseVisualStyleBackColor = false;
+            this.Create.Click += new System.EventHandler(this.button4_Click);
+            // 
             // DoNothing
             // 
             this.AccessibleDescription = "An Application about Nothing";
@@ -85,6 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(889, 585);
+            this.Controls.Add(this.Create);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -104,6 +118,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Create;
     }
 }
 

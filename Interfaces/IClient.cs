@@ -10,5 +10,6 @@ namespace The_Do_Nothing_Project.Interfaces
     {
         //TODO: Renaming class to better classify it's purpose.
         //TODO: Connect Client to other sources without Creating extra dependencies.
+        void SetState(ICommand state);
     }
 }

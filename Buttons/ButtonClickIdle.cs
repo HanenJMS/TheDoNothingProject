@@ -1,6 +1,6 @@
-﻿namespace The_Do_Nothing_Project.StateMachine
+﻿namespace The_Do_Nothing_Project.Buttons
 {
-    internal class ButtonClickIdle : State
+    internal class ButtonClickIdle : Command
     {
         public override string OnClick()
         {

@@ -1,6 +1,6 @@
-﻿namespace The_Do_Nothing_Project.StateMachine
+﻿namespace The_Do_Nothing_Project.Buttons
 {
-    internal class ButtonClickWrong : State
+    internal class ButtonClickWrong : Command
     {
         public override string OnClick()
         {

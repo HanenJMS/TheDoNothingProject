@@ -5,14 +5,16 @@ namespace The_Do_Nothing_Project.Control
 {
     internal abstract class ClientController
     {
-        public ICommand currentState, idle, right, wrong, directoryHandler;
-        public IDirectoryButtons directoryButtons;
+        public ICommand currentState, idle, right, wrong, directoryHandler, fileHandler;
+        public IDirectoryFileButton directoryButtons;
+        public IFileHandler fileButtons;
         public ClientController()
         {
             idle = new ButtonClickIdle();
             right = new ButtonClickRight();
             wrong = new ButtonClickWrong();
             directoryHandler = new DirectoryButton();
+            fileHandler = new FileButton();
             if (currentState == null)
             {
                 SetState(idle);
@@ -21,9 +23,13 @@ namespace The_Do_Nothing_Project.Control
         public void SetState(ICommand state)
         {
             this.currentState = state;
-            if(state is DirectoryButton)
+            if(state is DirectoryButton || state is FileButton)
             {
-                directoryButtons = (IDirectoryButtons)state;
+                directoryButtons = (IDirectoryFileButton)state;
+            }
+            if(state is FileButton)
+            {
+                fileButtons = (IFileHandler)state;
             }
         }
         public void SetIdle()
@@ -45,6 +51,10 @@ namespace The_Do_Nothing_Project.Control
         {
             SetState(directoryHandler);
         }
+        public void SetFileManager()
+        {
+            SetState(fileHandler);
+        }
         public string OnClick()
         {
             return currentState.OnClick();
@@ -60,6 +70,18 @@ namespace The_Do_Nothing_Project.Control
         public void MoveDirectory(string directory, string destination)
         {
             directoryButtons.Move(directory, destination);
+        }
+        public void WriteToFile(string path, string content)
+        {
+            fileButtons.Write(path, content);
+        }
+        public string ReadFromFile(string path)
+        {
+            return fileButtons.Read(path);
+        }
+        public void CopyFileTo(string path, string destination)
+        {
+            fileButtons.Copy(path, destination);
         }
     }
 }

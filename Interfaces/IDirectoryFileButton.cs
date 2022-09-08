@@ -1,6 +1,6 @@
 ﻿namespace The_Do_Nothing_Project.Interfaces
 {
-    internal interface IDirectoryButtons
+    internal interface IDirectoryFileButton
     {
         void Create(string path);
         void Delete(string path);

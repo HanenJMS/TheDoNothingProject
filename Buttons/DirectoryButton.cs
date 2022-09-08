@@ -8,7 +8,7 @@ using The_Do_Nothing_Project.Interfaces;
 
 namespace The_Do_Nothing_Project.Buttons
 {
-    internal class DirectoryButton : Command, IDirectoryButtons
+    internal class DirectoryButton : Command, IDirectoryFileButton
     {
         DirectoryManager fm = new DirectoryManager();
 

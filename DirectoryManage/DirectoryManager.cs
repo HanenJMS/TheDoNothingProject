@@ -4,7 +4,7 @@ using The_Do_Nothing_Project.Interfaces;
 
 namespace The_Do_Nothing_Project.FileHandler
 {
-    internal class DirectoryManager : IDirectoryButtons
+    internal class DirectoryManager : IDirectoryFileButton
     {
         public void Create(string path)
         {

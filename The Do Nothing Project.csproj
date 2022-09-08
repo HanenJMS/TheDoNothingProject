@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buttons\DirectoryButton.cs" />
+    <Compile Include="Buttons\FileButton.cs" />
     <Compile Include="Control\ClientController.cs" />
+    <Compile Include="DirectoryManage\FileManager.cs" />
     <Compile Include="DoNothing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,7 +57,8 @@
       <DependentUpon>DoNothing.cs</DependentUpon>
     </Compile>
     <Compile Include="DirectoryManage\DirectoryManager.cs" />
-    <Compile Include="Interfaces\IDirectoryButtons.cs" />
+    <Compile Include="Interfaces\IDirectoryFileButton.cs" />
+    <Compile Include="Interfaces\IFileHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Buttons\ButtonClickIdle.cs" />

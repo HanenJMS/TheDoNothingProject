@@ -2,7 +2,7 @@
 
 namespace The_Do_Nothing_Project.Control
 {
-    internal class Client : ClientController, IClient, IFileManager
+    internal class Client : ClientController
     {
     }
 }

@@ -3,15 +3,16 @@ using The_Do_Nothing_Project.Interfaces;
 
 namespace The_Do_Nothing_Project.Control
 {
-    internal abstract class ClientController : IFileManager
+    internal abstract class ClientController
     {
-        public ICommand currentState, idle, right, wrong, FileHandle;
+        public ICommand currentState, idle, right, wrong, directoryHandler;
+        public IDirectoryButtons directoryButtons;
         public ClientController()
         {
             idle = new ButtonClickIdle();
             right = new ButtonClickRight();
             wrong = new ButtonClickWrong();
-            FileHandle = new FileHandle();
+            directoryHandler = new DirectoryButton();
             if (currentState == null)
             {
                 SetState(idle);
@@ -20,6 +21,10 @@ namespace The_Do_Nothing_Project.Control
         public void SetState(ICommand state)
         {
             this.currentState = state;
+            if(state is DirectoryButton)
+            {
+                directoryButtons = (IDirectoryButtons)state;
+            }
         }
         public void SetIdle()
         {
@@ -36,28 +41,25 @@ namespace The_Do_Nothing_Project.Control
             //SetState(new ButtonClickWrong());
             SetState(wrong);
         }
-        public void SetFileHandle()
+        public void SetDirectoryManager()
         {
-            SetState(FileHandle);
+            SetState(directoryHandler);
         }
         public string OnClick()
         {
             return currentState.OnClick();
         }
-
-        public void Create(string path)
+        public void CreateDirectory(string path)
         {
-            FileHandle.OnSpecialClick(path);
+            directoryButtons.Create(path);
         }
-
-        public void Delete(string path)
+        public void DeleteDirectory(string path)
         {
-            FileHandle.OnSpecialClick(path);
+            directoryButtons.Delete(path);
         }
-
-        public void Move(string path, string destination)
+        public void MoveDirectory(string directory, string destination)
         {
-            FileHandle.OnSpecialClick(path);
+            directoryButtons.Move(directory, destination);
         }
     }
 }

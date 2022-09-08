@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 using The_Do_Nothing_Project.Control;
 
@@ -35,24 +34,31 @@ namespace The_Do_Nothing_Project
             button.SetIdle();
             MessageBox.Show(button.OnClick());
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void Create_Click(object sender, EventArgs e)
         {
-            button.SetFileHandle();
-            string path = @"C:\Users\Hanen\Desktop\DotNet Web Projects\The Do Nothing Project\newFolder";
-            button.Create(path);
+            button.SetDirectoryManager();
+            button.CreateDirectory(textBox1.Text);
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void Mover_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\Hanen\Desktop\DotNet Web Projects\The Do Nothing Project\newFolder";
-            string dest = @"C:\Users\Hanen\Desktop\newFolder";
-            button.Move(path, dest);
+            button.SetDirectoryManager();
+            button.MoveDirectory(textBox1.Text, textBox2.Text);
+        }
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            button.SetDirectoryManager();
+            button.DeleteDirectory(textBox1.Text);
         }
 
-        private void button4_Click_2(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Directory.Delete(@"C:\Users\Hanen\Desktop\newFolder");
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,5 @@
         //    this.client = client;
         //}
         string OnClick();
-        void OnSpecialClick(string path);
-        void SetClient(IClient client);
     }
 }
